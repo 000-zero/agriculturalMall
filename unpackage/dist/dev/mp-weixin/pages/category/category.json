@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-search": "/node-modules/uview-ui/components/u-search/u-search",
+    "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
+  }
+}
