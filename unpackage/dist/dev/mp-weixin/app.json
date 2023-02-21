@@ -4,7 +4,13 @@
     "pages/category/category",
     "pages/cart/cart",
     "pages/user/user",
-    "pages/category/search"
+    "pages/category/search",
+    "pages/address/address",
+    "pages/address/addAddress",
+    "pages/order/order",
+    "pages/order/orderDetails",
+    "pages/merchant/merchant",
+    "pages/merchant/averagePrice"
   ],
   "subPackages": [],
   "window": {

@@ -55,7 +55,8 @@
   margin-top: 10rpx;
 }
 .cardPage.data-v-0f00adf4 {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: #f6f6f6;
   position: relative;
 }

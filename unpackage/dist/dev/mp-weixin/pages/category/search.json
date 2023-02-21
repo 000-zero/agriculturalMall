@@ -3,6 +3,8 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-search": "/node-modules/uview-ui/components/u-search/u-search",
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
+    "card-list": "/components/cardList/cardList"
   }
 }

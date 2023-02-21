@@ -72,7 +72,8 @@
 <style scoped
 	lang="scss">
 	.cardPage {
-		height: 100vh;
+		min-height: 100vh;
+		height: 100%;
 		background-color: #f6f6f6;
 		position: relative;
 

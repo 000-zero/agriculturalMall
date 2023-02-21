@@ -1,0 +1,152 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.flex.data-v-a787a424 {
+  display: flex;
+}
+.flexCenter.data-v-a787a424 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexColumnCenter.data-v-a787a424 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flexAlignCenter.data-v-a787a424 {
+  display: flex;
+  align-items: center;
+}
+.flexSpace.data-v-a787a424 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexColumn.data-v-a787a424 {
+  display: flex;
+  flex-direction: column;
+}
+.mt10.data-v-a787a424 {
+  margin-top: 10rpx;
+}
+.qrcode.data-v-a787a424 {
+  padding: 20rpx;
+}
+.container.data-v-a787a424 {
+  padding-left: 10px;
+  padding-top: 25px;
+  padding-right: 10px;
+  height: calc(100vh - 97px);
+  overflow-y: scroll;
+  padding-top: 150px;
+  background-color: #f5f5f5;
+}
+.button.data-v-a787a424 {
+  width: 30%;
+  margin-right: 3px;
+}
+.payKeyboard.data-v-a787a424 {
+  z-index: 9;
+}
+.top.data-v-a787a424 {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  padding: 20rpx;
+  z-index: 8;
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+}
+.top .left.data-v-a787a424 {
+  flex: 9;
+  margin-left: 20rpx;
+}
+.top .left view.data-v-a787a424 {
+  margin-top: 15rpx;
+}
+.top .left .address.data-v-a787a424 {
+  display: flex;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+.top .left .address .more.data-v-a787a424 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 10;
+  width: 90px;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow: hidden;
+}
+.top .left .address .tag.data-v-a787a424 {
+  flex: 2;
+  float: right;
+  margin-top: 2px;
+  margin-right: 9px;
+}
+.top .left .info ._a.data-v-a787a424 {
+  margin-right: 20rpx;
+  color: #82848A;
+}
+.footer.data-v-a787a424 {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 2px solid #eee;
+  line-height: 100rpx;
+  width: 100%;
+}
+.footer .footer_container.data-v-a787a424 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .footer_container .tp.data-v-a787a424 {
+  padding-right: 30px;
+}
+.footer .footer_container .card.data-v-a787a424 {
+  height: 48px;
+  line-height: 48px;
+  margin-left: 20px;
+}
+.footer .footer_container .num.data-v-a787a424 {
+  margin: 0 20rpx;
+  width: 100px;
+  color: #2979ff;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.footer .footer_container .price.data-v-a787a424 {
+  width: 100px;
+  color: #2979ff;
+  font-weight: bold;
+  font-size: 40rpx;
+  margin-left: 10rpx;
+}
+
