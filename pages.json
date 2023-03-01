@@ -6,14 +6,14 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
 			}
 		}
 	    ,{
             "path" : "pages/category/category",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "农产品分类",
                 "enablePullDownRefresh": false
             }
             
@@ -22,7 +22,7 @@
             "path" : "pages/cart/cart",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
             
@@ -31,7 +31,7 @@
             "path" : "pages/user/user",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "用户中心",
                 "enablePullDownRefresh": false
             }
             
@@ -40,7 +40,7 @@
             "path" : "pages/category/search",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "搜索",
                 "enablePullDownRefresh": false
             }
             
@@ -49,7 +49,7 @@
             "path" : "pages/address/address",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "地址",
                 "enablePullDownRefresh": false
             }
             
@@ -58,7 +58,7 @@
             "path" : "pages/address/addAddress",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "添加地址",
                 "enablePullDownRefresh": false
             }
             
@@ -67,7 +67,7 @@
             "path" : "pages/order/order",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "订单",
                 "enablePullDownRefresh": false
             }
             
@@ -76,7 +76,7 @@
             "path" : "pages/order/orderDetails",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "订单详情",
                 "enablePullDownRefresh": false
             }
             
@@ -85,13 +85,22 @@
             "path" : "pages/merchant/merchant",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "农户",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
             "path" : "pages/merchant/averagePrice",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "平均价格",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/goods/goodsDetail",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

@@ -13,6 +13,38 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-qita:before {
+  content: "\e64b";
+}
+
+.icon-shuichanhaixian:before {
+  content: "\e65d";
+}
+
+.icon-quanbu:before {
+  content: "\e785";
+}
+
+.icon-shucai:before {
+  content: "\e623";
+}
+
+.icon-alishangchuan-:before {
+  content: "\e603";
+}
+
+.icon-liangyoumimian:before {
+  content: "\e6c2";
+}
+
+.icon-caoyao:before {
+  content: "\e739";
+}
+
+.icon-29gongyegongcheng_jiagonggongyi:before {
+  content: "\e670";
+}
+
 .icon-moban:before {
   content: "\e621";
 }

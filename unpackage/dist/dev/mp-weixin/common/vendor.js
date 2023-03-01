@@ -16877,64 +16877,70 @@ var _default = {
   "pages": [{
     "path": "pages/index/index",
     "style": {
-      "navigationBarTitleText": "uni-app"
+      "navigationBarTitleText": "首页"
     }
   }, {
     "path": "pages/category/category",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "农产品分类",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/cart/cart",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "购物车",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/user/user",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "用户中心",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/category/search",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "搜索",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/address/address",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "地址",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/address/addAddress",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "添加地址",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/order/order",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "订单",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/order/orderDetails",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "订单详情",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/merchant/merchant",
     "style": {
-      "navigationBarTitleText": "",
+      "navigationBarTitleText": "农户",
       "enablePullDownRefresh": false
     }
   }, {
     "path": "pages/merchant/averagePrice",
+    "style": {
+      "navigationBarTitleText": "平均价格",
+      "enablePullDownRefresh": false
+    }
+  }, {
+    "path": "pages/goods/goodsDetail",
     "style": {
       "navigationBarTitleText": "",
       "enablePullDownRefresh": false
@@ -27695,7 +27701,7 @@ module.exports = function (vm) {
   // 初始化请求配置
   uni.$u.http.setConfig(function (config) {
     /* config 为默认全局配置*/
-    config.baseURL = 'http://114.55.94.207:3006'; /* 根域名 */
+    config.baseURL = 'http://127.0.0.1:3006'; /* 根域名 */
     // config.dataType='json';
     config.header = {
       'Access-Control-Allow-Origin': '*',
@@ -28220,7 +28226,15 @@ exports.hasLike = hasLike;
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */
 /*!****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-swiper/props.js ***!
   \****************************************************************************************/
@@ -28363,14 +28377,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-grid/props.js ***!
   \**************************************************************************************/
@@ -28407,14 +28421,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */,
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */
 /*!*******************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-grid-item/props.js ***!
   \*******************************************************************************************/
@@ -28446,21 +28460,21 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */,
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
 /* 283 */,
 /* 284 */,
 /* 285 */,
 /* 286 */,
 /* 287 */,
 /* 288 */,
-/* 289 */
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */
 /*!****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-search/props.js ***!
   \****************************************************************************************/
@@ -28596,14 +28610,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */
 /*!*************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-tag/props.js ***!
   \*************************************************************************************/
@@ -28705,14 +28719,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 298 */,
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */
 /*!***************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-badge/props.js ***!
   \***************************************************************************************/
@@ -28802,14 +28816,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */
 /*!*****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-divider/props.js ***!
   \*****************************************************************************************/
@@ -28871,14 +28885,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */
 /*!************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-checkbox-group/props.js ***!
   \************************************************************************************************/
@@ -28975,14 +28989,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */
 /*!******************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-checkbox/props.js ***!
   \******************************************************************************************/
@@ -29069,14 +29083,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */
 /*!********************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-number-box/props.js ***!
   \********************************************************************************************/
@@ -29203,14 +29217,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-icon/icons.js ***!
   \**************************************************************************************/
@@ -29441,7 +29455,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 346 */
+/* 354 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-icon/props.js ***!
   \**************************************************************************************/
@@ -29548,14 +29562,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */
 /*!********************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/libs/mixin/button.js ***!
   \********************************************************************************/
@@ -29585,7 +29599,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 355 */
+/* 363 */
 /*!**********************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/libs/mixin/openType.js ***!
   \**********************************************************************************/
@@ -29627,7 +29641,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 356 */
+/* 364 */
 /*!****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-button/props.js ***!
   \****************************************************************************************/
@@ -29806,14 +29820,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */
 /*!****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-avatar/props.js ***!
   \****************************************************************************************/
@@ -29909,14 +29923,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */
 /*!*******************************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-data-picker/components/uni-data-pickerview/uni-data-picker.js ***!
   \*******************************************************************************************************************/
@@ -30585,14 +30599,14 @@ exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 27)["default"]))
 
 /***/ }),
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */
 /*!****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-sticky/props.js ***!
   \****************************************************************************************/
@@ -30644,14 +30658,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-tabs/props.js ***!
   \**************************************************************************************/
@@ -30733,14 +30747,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */
 /*!***************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-empty/props.js ***!
   \***************************************************************************************/
@@ -30817,21 +30831,155 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
 /* 405 */,
 /* 406 */,
 /* 407 */,
 /* 408 */,
 /* 409 */,
 /* 410 */,
-/* 411 */
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */
+/*!**************************************************************************************!*\
+  !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-list/props.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    // 控制是否出现滚动条，仅nvue有效
+    showScrollbar: {
+      type: Boolean,
+      default: uni.$u.props.list.showScrollbar
+    },
+    // 距底部多少时触发scrolltolower事件
+    lowerThreshold: {
+      type: [String, Number],
+      default: uni.$u.props.list.lowerThreshold
+    },
+    // 距顶部多少时触发scrolltoupper事件，非nvue有效
+    upperThreshold: {
+      type: [String, Number],
+      default: uni.$u.props.list.upperThreshold
+    },
+    // 设置竖向滚动条位置
+    scrollTop: {
+      type: [String, Number],
+      default: uni.$u.props.list.scrollTop
+    },
+    // 控制 onscroll 事件触发的频率，仅nvue有效
+    offsetAccuracy: {
+      type: [String, Number],
+      default: uni.$u.props.list.offsetAccuracy
+    },
+    // 启用 flexbox 布局。开启后，当前节点声明了display: flex就会成为flex container，并作用于其孩子节点，仅微信小程序有效
+    enableFlex: {
+      type: Boolean,
+      default: uni.$u.props.list.enableFlex
+    },
+    // 是否按分页模式显示List，默认值false
+    pagingEnabled: {
+      type: Boolean,
+      default: uni.$u.props.list.pagingEnabled
+    },
+    // 是否允许List滚动
+    scrollable: {
+      type: Boolean,
+      default: uni.$u.props.list.scrollable
+    },
+    // 值应为某子元素id（id不能以数字开头）
+    scrollIntoView: {
+      type: String,
+      default: uni.$u.props.list.scrollIntoView
+    },
+    // 在设置滚动条位置时使用动画过渡
+    scrollWithAnimation: {
+      type: Boolean,
+      default: uni.$u.props.list.scrollWithAnimation
+    },
+    // iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只对微信小程序有效
+    enableBackToTop: {
+      type: Boolean,
+      default: uni.$u.props.list.enableBackToTop
+    },
+    // 列表的高度
+    height: {
+      type: [String, Number],
+      default: uni.$u.props.list.height
+    },
+    // 列表宽度
+    width: {
+      type: [String, Number],
+      default: uni.$u.props.list.width
+    },
+    // 列表前后预渲染的屏数，1代表一个屏幕的高度，1.5代表1个半屏幕高度
+    preLoadScreen: {
+      type: [String, Number],
+      default: uni.$u.props.list.preLoadScreen
+    }
+    // vue下，是否开启虚拟列表
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */
+/*!*******************************************************************************************!*\
+  !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-list-item/props.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  props: {
+    // 用于滚动到指定item
+    anchor: {
+      type: [String, Number],
+      default: uni.$u.props.listItem.anchor
+    }
+  }
+};
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+
+/***/ }),
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */
 /*!**********************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-loading-icon/props.js ***!
   \**********************************************************************************************/
@@ -30908,14 +31056,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */
 /*!**************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-swiper-indicator/props.js ***!
   \**************************************************************************************************/
@@ -30962,14 +31110,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */
 /*!********************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-transition/props.js ***!
   \********************************************************************************************/
@@ -31011,7 +31159,7 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 428 */
+/* 452 */
 /*!*************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-transition/transition.js ***!
   \*************************************************************************************************/
@@ -31028,7 +31176,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 28));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 30));
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 429));
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 453));
 // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {
   return new Promise(function (resolve) {
@@ -31120,7 +31268,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 429 */
+/* 453 */
 /*!***************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \***************************************************************************************************/
@@ -31313,14 +31461,14 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-line/props.js ***!
   \**************************************************************************************/
@@ -31371,14 +31519,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */,
-/* 444 */,
-/* 445 */
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-text/props.js ***!
   \**************************************************************************************/
@@ -31506,12 +31654,12 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 446 */,
-/* 447 */,
-/* 448 */,
-/* 449 */,
-/* 450 */,
-/* 451 */
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */
 /*!******************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
   \******************************************************************************************************/
@@ -31526,9 +31674,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 452));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 453));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 454));
+var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 476));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 477));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 478));
 var _default = {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -31537,7 +31685,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 452 */
+/* 476 */
 /*!*****************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
   \*****************************************************************************************************/
@@ -31547,7 +31695,7 @@ exports.default = _default;
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
 
 /***/ }),
-/* 453 */
+/* 477 */
 /*!**********************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
   \**********************************************************************************************************/
@@ -31557,7 +31705,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
 
 /***/ }),
-/* 454 */
+/* 478 */
 /*!**********************************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
   \**********************************************************************************************************/
@@ -31567,14 +31715,14 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */,
-/* 459 */,
-/* 460 */,
-/* 461 */,
-/* 462 */
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */
 /*!*****************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \*****************************************************************************************/
@@ -32595,21 +32743,21 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */,
-/* 468 */,
-/* 469 */,
-/* 470 */,
-/* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */,
-/* 475 */,
-/* 476 */,
-/* 477 */
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-text/value.js ***!
   \**************************************************************************************/
@@ -32717,14 +32865,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 478 */,
-/* 479 */,
-/* 480 */,
-/* 481 */,
-/* 482 */,
-/* 483 */,
-/* 484 */,
-/* 485 */
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */
 /*!**************************************************************************************!*\
   !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-link/props.js ***!
   \**************************************************************************************/
@@ -32774,188 +32922,6 @@ var _default = {
     text: {
       type: String,
       default: uni.$u.props.link.text
-    }
-  }
-};
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-/* 486 */,
-/* 487 */,
-/* 488 */,
-/* 489 */,
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */,
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */,
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
-/* 509 */,
-/* 510 */,
-/* 511 */,
-/* 512 */,
-/* 513 */,
-/* 514 */,
-/* 515 */,
-/* 516 */,
-/* 517 */,
-/* 518 */,
-/* 519 */,
-/* 520 */,
-/* 521 */,
-/* 522 */,
-/* 523 */,
-/* 524 */,
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */
-/*!**************************************************************************************!*\
-  !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-list/props.js ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  props: {
-    // 控制是否出现滚动条，仅nvue有效
-    showScrollbar: {
-      type: Boolean,
-      default: uni.$u.props.list.showScrollbar
-    },
-    // 距底部多少时触发scrolltolower事件
-    lowerThreshold: {
-      type: [String, Number],
-      default: uni.$u.props.list.lowerThreshold
-    },
-    // 距顶部多少时触发scrolltoupper事件，非nvue有效
-    upperThreshold: {
-      type: [String, Number],
-      default: uni.$u.props.list.upperThreshold
-    },
-    // 设置竖向滚动条位置
-    scrollTop: {
-      type: [String, Number],
-      default: uni.$u.props.list.scrollTop
-    },
-    // 控制 onscroll 事件触发的频率，仅nvue有效
-    offsetAccuracy: {
-      type: [String, Number],
-      default: uni.$u.props.list.offsetAccuracy
-    },
-    // 启用 flexbox 布局。开启后，当前节点声明了display: flex就会成为flex container，并作用于其孩子节点，仅微信小程序有效
-    enableFlex: {
-      type: Boolean,
-      default: uni.$u.props.list.enableFlex
-    },
-    // 是否按分页模式显示List，默认值false
-    pagingEnabled: {
-      type: Boolean,
-      default: uni.$u.props.list.pagingEnabled
-    },
-    // 是否允许List滚动
-    scrollable: {
-      type: Boolean,
-      default: uni.$u.props.list.scrollable
-    },
-    // 值应为某子元素id（id不能以数字开头）
-    scrollIntoView: {
-      type: String,
-      default: uni.$u.props.list.scrollIntoView
-    },
-    // 在设置滚动条位置时使用动画过渡
-    scrollWithAnimation: {
-      type: Boolean,
-      default: uni.$u.props.list.scrollWithAnimation
-    },
-    // iOS点击顶部状态栏、安卓双击标题栏时，滚动条返回顶部，只对微信小程序有效
-    enableBackToTop: {
-      type: Boolean,
-      default: uni.$u.props.list.enableBackToTop
-    },
-    // 列表的高度
-    height: {
-      type: [String, Number],
-      default: uni.$u.props.list.height
-    },
-    // 列表宽度
-    width: {
-      type: [String, Number],
-      default: uni.$u.props.list.width
-    },
-    // 列表前后预渲染的屏数，1代表一个屏幕的高度，1.5代表1个半屏幕高度
-    preLoadScreen: {
-      type: [String, Number],
-      default: uni.$u.props.list.preLoadScreen
-    }
-    // vue下，是否开启虚拟列表
-  }
-};
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
-
-/***/ }),
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */
-/*!*******************************************************************************************!*\
-  !*** D:/uniapp/毕设/agriculturalMall/node_modules/uview-ui/components/u-list-item/props.js ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  props: {
-    // 用于滚动到指定item
-    anchor: {
-      type: [String, Number],
-      default: uni.$u.props.listItem.anchor
     }
   }
 };

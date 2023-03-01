@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "地址",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon"

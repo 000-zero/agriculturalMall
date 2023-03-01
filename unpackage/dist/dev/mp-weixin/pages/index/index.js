@@ -102,16 +102,16 @@ var components
 try {
   components = {
     uSwiper: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-swiper/u-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 253))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-swiper/u-swiper */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-swiper/u-swiper")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-swiper/u-swiper.vue */ 261))
     },
     uGrid: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-grid/u-grid */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-grid/u-grid")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-grid/u-grid.vue */ 261))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-grid/u-grid */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-grid/u-grid")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-grid/u-grid.vue */ 269))
     },
     uGridItem: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-grid-item/u-grid-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-grid-item/u-grid-item")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-grid-item/u-grid-item.vue */ 269))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-grid-item/u-grid-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-grid-item/u-grid-item")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-grid-item/u-grid-item.vue */ 277))
     },
     cardList: function () {
-      return __webpack_require__.e(/*! import() | components/cardList/cardList */ "components/cardList/cardList").then(__webpack_require__.bind(null, /*! @/components/cardList/cardList.vue */ 277))
+      return __webpack_require__.e(/*! import() | components/cardList/cardList */ "components/cardList/cardList").then(__webpack_require__.bind(null, /*! @/components/cardList/cardList.vue */ 285))
     },
   }
 } catch (e) {
@@ -188,10 +188,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 28));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
+var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 30));
+var _api = __webpack_require__(/*! @/config/api.js */ 172);
 //
 //
 //
@@ -216,36 +221,90 @@ exports.default = void 0;
 var _default = {
   data: function data() {
     return {
-      swiperList: ['https://cdn.uviewui.com/uview/swiper/swiper1.png', 'https://cdn.uviewui.com/uview/swiper/swiper2.png', 'https://cdn.uviewui.com/uview/swiper/swiper3.png'],
+      page: 1,
+      swiperList: ['https://image.cnhnb.com/image/jpg/head/2022/06/19/3c12459dd0304346ac0257fd9aed34c7.jpg?imageView2/1/w/525/h/525/format/jpg/interlace/1/quality/100/ignore-error/1', 'https://cdn.uviewui.com/uview/swiper/swiper2.png', 'https://cdn.uviewui.com/uview/swiper/swiper3.png'],
+      goods: [],
       optionList: [{
         name: 'photo',
-        title: '图片'
+        title: '全部',
+        icon: 'icon-quanbu'
       }, {
         name: 'lock',
-        title: '锁头'
+        title: '蔬菜',
+        icon: 'icon-shucai'
       }, {
         name: 'star',
-        title: '星星'
+        title: '水果',
+        icon: 'icon-alishangchuan-'
       }, {
         name: 'photo',
-        title: '图片'
+        title: '水产',
+        icon: 'icon-shuichanhaixian'
       }, {
         name: 'lock',
-        title: '锁头'
+        title: '农副加工',
+        icon: 'icon-29gongyegongcheng_jiagonggongyi:before '
       }, {
         name: 'star',
-        title: '星星'
+        title: '中药材',
+        icon: 'icon-caoyao'
       }, {
         name: 'star',
-        title: '星星'
+        title: '采油米面',
+        icon: 'icon-liangyoumimian'
       }, {
         name: 'star',
-        title: '星星'
+        title: '其它',
+        icon: 'icon-qita'
       }]
     };
   },
-  onLoad: function onLoad() {},
-  methods: {}
+  onLoad: function onLoad() {
+    var _this = this;
+    return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+      return _regenerator.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.getData();
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
+  },
+  methods: {
+    getData: function getData() {
+      var _this2 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var params, res;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                params = {
+                  page: _this2.page
+                };
+                _context2.next = 3;
+                return (0, _api.getindex)(params);
+              case 3:
+                res = _context2.sent;
+                _this2.goods = [].concat((0, _toConsumableArray2.default)(_this2.goods), (0, _toConsumableArray2.default)(res.goods.data));
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
+  },
+  onReachBottom: function onReachBottom() {
+    this.page += 1;
+    this.getData();
+  }
 };
 exports.default = _default;
 

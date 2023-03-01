@@ -10,52 +10,77 @@
 			<u-grid col='4'>
 				<u-grid-item :customStyle="{ 'margin-bottom': '20rpx' }"
 					v-for="(optionItem,optionIndex) in optionList">
-					<image style="width: 100rpx;height: 100rpx;"
-						src="https://cdn.uviewui.com/uview/swiper/swiper1.png" />
+					<view :class='"iconfont " + optionItem.icon'
+						style="font-size: 70rpx;color: #3fd72c;" />
 					<text>{{optionItem.title}}</text>
 				</u-grid-item>
 			</u-grid>
 		</view>
-		<cardList/>
+		<cardList :item="goods"/>
 	</view>
 </template>
 <script>
+	import {getindex} from '@/config/api.js';
 	export default {
 		data() {
 			return {
-				swiperList: ['https://cdn.uviewui.com/uview/swiper/swiper1.png',
+				page: 1,
+				swiperList: ['https://image.cnhnb.com/image/jpg/head/2022/06/19/3c12459dd0304346ac0257fd9aed34c7.jpg?imageView2/1/w/525/h/525/format/jpg/interlace/1/quality/100/ignore-error/1',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png'
 				],
+				goods: [],
 				optionList: [{
 					name: 'photo',
-					title: '图片'
+					title: '全部',
+					icon:'icon-quanbu'
 				}, {
 					name: 'lock',
-					title: '锁头'
+					title: '蔬菜',
+					icon:'icon-shucai'
 				}, {
 					name: 'star',
-					title: '星星'
+					title: '水果',
+					icon:'icon-alishangchuan-'
 				}, {
 					name: 'photo',
-					title: '图片'
+					title: '水产',
+					icon:'icon-shuichanhaixian'
 				}, {
 					name: 'lock',
-					title: '锁头'
+					title: '农副加工',
+					icon:'icon-29gongyegongcheng_jiagonggongyi:before '
 				}, {
 					name: 'star',
-					title: '星星'
+					title: '中药材',
+					icon:'icon-caoyao'
 				}, {
 					name: 'star',
-					title: '星星'
+					title: '采油米面',
+					icon:'icon-liangyoumimian'
 				}, {
 					name: 'star',
-					title: '星星'
+					title: '其它',
+					icon:'icon-qita'
 				}]
 			};
 		},
-		onLoad() {},
-		methods: {}
+		async onLoad() {
+			this.getData()
+		},
+		methods: {
+			async getData() {
+				const params = {
+					page: this.page,
+				}
+				const res = await getindex(params)
+				this.goods = [...this.goods, ...res.goods.data]
+			}
+		},
+		onReachBottom() {
+			this.page += 1
+			this.getData()
+		}
 	};
 </script>
 <style scoped

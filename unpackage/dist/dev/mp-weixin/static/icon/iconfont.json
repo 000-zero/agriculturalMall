@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "993780",
+      "name": "其它",
+      "font_class": "qita",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "1009352",
+      "name": "水产海鲜",
+      "font_class": "shuichanhaixian",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "3092117",
+      "name": "全部",
+      "font_class": "quanbu",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "5193924",
+      "name": "蔬菜",
+      "font_class": "shucai",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "5212636",
+      "name": "樱桃",
+      "font_class": "alishangchuan-",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "13425494",
+      "name": "粮油米面",
+      "font_class": "liangyoumimian",
+      "unicode": "e6c2",
+      "unicode_decimal": 59074
+    },
+    {
+      "icon_id": "19263786",
+      "name": "草药",
+      "font_class": "caoyao",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "20810357",
+      "name": "加工工艺",
+      "font_class": "29gongyegongcheng_jiagonggongyi",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
       "icon_id": "731493",
       "name": "全部订单",
       "font_class": "moban",

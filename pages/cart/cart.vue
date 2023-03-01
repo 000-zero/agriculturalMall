@@ -7,7 +7,7 @@
 					<u-checkbox />
 					<image style="width: 150rpx;max-height: 200px;margin-right: 10rpx;"
 						mode="widthFix"
-						src="../../static/logo.png">
+						src="https://image.guo68.com/2019-09-28/93ad6f3d47f37c4c1ec62ca132989809.jpg.400_280_thumb.jpg">
 						<view style="width: 100%;">
 							<view class="flex">
 								<u-tag type="success"

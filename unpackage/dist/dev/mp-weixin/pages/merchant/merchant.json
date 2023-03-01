@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "农户",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"

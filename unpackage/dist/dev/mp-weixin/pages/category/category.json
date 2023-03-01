@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "农产品分类",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-search": "/node-modules/uview-ui/components/u-search/u-search",

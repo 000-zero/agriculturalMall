@@ -3,27 +3,41 @@
 		<view class="column">
 			<view class="columnItem"
 				v-for="columnItem1 in splitData.column1">
-				<image mode="widthFix"
-					class="img"
-					:src="columnItem1.src" />
-				<view class="flexSpace mt10"
-					style="padding-left: 10rpx;padding-right: 5rpx;">
-					<u-tag text="A级" />
-					<text style="margin-left: 10rpx;">苹果（中） 1份/约500g</text>
-				</view>
+				<navigator class="goods-item"
+					:url="`/pages/goods/goodsDetail?id=${columnItem1.id}`">
+					<image mode="widthFix"
+						class="img"
+						:src="columnItem1.cover1" />
+					<view class="flexSpace mt10"
+						style="padding: 10rpx;">
+						<u-tag text="A级" />
+						<text  class="ellipsis"  style="margin-left: 10rpx;">{{columnItem1.title}} 1份/约500g</text>
+					</view>
+					<view class="flexSpace" style="padding: 10rpx;">
+						<view class="price" style="white-space:nowrap">{{columnItem1.price}}</view>
+						<view class="sales">{{columnItem1.sales}}</view>
+					</view>
+				</navigator>
 			</view>
 		</view>
 		<view class="column">
 			<view class="columnItem"
 				v-for="columnItem2 in splitData.column2">
-				<image mode="widthFix"
-					class="img"
-					:src="columnItem2.src" />
-				<view class="flexSpace mt10"
-					style="padding-left: 5rpx;padding-right: 5rpx;">
-					<u-tag text="A级" />
-					<text style="margin-left: 10rpx;">苹果（中） 1份/约500g</text>
-				</view>
+				<navigator class="goods-item"
+					:url="`/pages/goods/goodsDetail?id=${columnItem2.id}`">
+					<image mode="widthFix"
+						class="img"
+						:src="columnItem2.cover1" />
+					<view class="flexSpace mt10"
+						style="padding: 10rpx;">
+						<u-tag text="A级" />
+						<text class="ellipsis" style="margin-left: 10rpx;">{{columnItem2.title}} 1份/约500g</text>
+					</view>
+					<view class="flexSpace" style="padding: 10rpx;">
+						<view class="price" style="white-space:nowrap">{{columnItem2.price}}</view>
+						<view class="sales">{{columnItem2.sales}}</view>
+					</view>
+				</navigator>
 			</view>
 		</view>
 	</view>
@@ -31,25 +45,23 @@
 <script>
 	export default {
 		name: "cardList",
-		// mounted() {
-		// 	console.log('sd', this.splitData.column1[0].src)
-		// },
+		props: {
+			item: {
+				type: Array,
+				default () {
+					return {}
+				}
+			}
+		},
+		mounted() {
+			console.log('item', this.item)
+		},
 		data() {
-			return {
-				cardListData: [{
-					src: 'https://cdn.pixabay.com/photo/2023/01/14/22/23/geometric-7719159_640.png',
-				}, {
-					src: 'https://cdn.pixabay.com/photo/2023/01/22/23/59/couple-7737589_640.png'
-				}, {
-					src: 'https://cdn.pixabay.com/photo/2023/01/14/22/23/geometric-7719159_640.png',
-				}, {
-					src: 'https://cdn.pixabay.com/photo/2023/01/22/23/59/couple-7737589_640.png'
-				}]
-			};
+			return {};
 		},
 		computed: {
 			splitData() {
-				return this.shunt(this.cardListData)
+				return this.shunt(this.item)
 			}
 		},
 		methods: {
@@ -90,8 +102,8 @@
 			background-color: #fff;
 			border: 1rpx solid #8498aa;
 		}
-		
-		.columnItem:nth-child(n+2){
+
+		.columnItem:nth-child(n+2) {
 			margin-top: 20rpx;
 		}
 
@@ -99,8 +111,24 @@
 			width: 100%;
 		}
 	}
+	
+	.ellipsis {
+		width: 250rpx;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 
 	.column:not(:last-of-type) {
 		margin-right: 10rpx;
+	}
+	
+	.sales{
+		font-size: 28rpx;
+		color: #9f9f9f;
+	}
+	.price{
+		font-size: 28rpx;
+		color: red;
 	}
 </style>

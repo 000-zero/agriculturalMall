@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "订单详情",
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",

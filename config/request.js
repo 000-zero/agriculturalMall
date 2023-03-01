@@ -3,7 +3,7 @@ module.exports = (vm) => {
 	// 初始化请求配置
 	uni.$u.http.setConfig((config) => {
 		/* config 为默认全局配置*/
-		config.baseURL = 'http://114.55.94.207:3006'; /* 根域名 */
+		config.baseURL = 'http://127.0.0.1:3006'; /* 根域名 */
 		// config.dataType='json';
 		config.header = {
 			'Access-Control-Allow-Origin': '*',
