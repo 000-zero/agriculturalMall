@@ -54,6 +54,12 @@
 .mt10.data-v-57280228 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-57280228 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .indexPage.data-v-57280228 {
   margin-left: 15rpx;
   margin-right: 15rpx;

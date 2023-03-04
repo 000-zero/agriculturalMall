@@ -23,9 +23,9 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.request.use((config) => { // 可使用async await 做异步操作
 		// 初始化请求拦截器时，会执行此方法，此时data为undefined，赋予默认{}
 
-		// config.header.Authorization = "Bearer" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnNob3AuZWR1d29yay5jblwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NjgwMTc2NywiZXhwIjoxNjQ3MTYxNzY3LCJuYmYiOjE2NDY4MDE3NjcsImp0aSI6InVsa0dZVjhXcWhXeHBsUzEiLCJzdWIiOjYxMDksInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ._zTL226t-KOZkXXeAQcB2Fo1uksHfyLpg1obOcJblX0"
+		config.header.Authorization = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IuaAquWFvSIsImVtYWlsIjoiemt5QHFxLmNvbSIsInBhc3N3b3JkIjoiMTIzMTIzIiwiaWF0IjoxNjc3OTI0MzMyLCJleHAiOjE2NzgwMTA3MzJ9.7QmpAjg9pVxN1hvcUQc-ONEY-DeWbiyUveZOHqPL8cw"
 		// 根据custom参数中配置的是否需要token，添加对应的请求头
-		config.header.Authorization = "Bearer " + vm.$store.state.vuex_Authorization
+		// config.header.Authorization = "Bearer " + vm.$store.state.vuex_Authorization
 		// console.log(config.header.Authorization)
 
 		return config

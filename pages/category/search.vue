@@ -19,25 +19,53 @@
 			</view>
 		</view>
 		<view class="searchResult" v-else>
-			<cardList/>
+			<view v-if="isSearchNull">
+				<u-empty mode="search" />
+			</view>
+			<cardList v-if="!isSearchNull" :item="goods"/>
 		</view>
 	</view>
 </template>
 <script>
+	import {
+		searchGoods
+	} from '@/config/api.js';
 	export default {
 		data() {
 			return {
 				isShowHotSearch: 'true',
 				keyword: '',
+				isSearchNull:'true',
+				page: 1,
+				goods: [],
 				tag: ['苹果', '草莓', '菠萝', '西瓜', '榴莲']
 			}
 		},
 		methods: {
 			handleTag(value){
 				this.keyword = value
+				this.handleSearch()
 			},
 			async handleSearch(){
-				this.isShowHotSearch = false
+				this.isShowHotSearch = false;
+				this.getData();
+				this.goods = [];
+			},
+			async getData(){
+				const params = {
+					keyword: this.keyword,
+					current_page:this.page,
+				}
+				const res = await searchGoods(params)
+				this.isSearchNull = res.data.length == 0 ? true : false;
+				console.log("sd",this.isSearchNull)
+				console.log("sd",this.isShowHotSearch)
+				this.goods = [...this.goods, ...res.data]
+			}
+			,
+			onReachBottom() {
+				this.page += 1
+				this.getData()
 			}
 		}
 	}

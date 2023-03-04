@@ -54,6 +54,12 @@
 .mt10.data-v-a787a424 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-a787a424 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .qrcode.data-v-a787a424 {
   padding: 20rpx;
 }

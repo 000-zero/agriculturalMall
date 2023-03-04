@@ -54,6 +54,12 @@
 .mt10.data-v-a5fc8b72 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-a5fc8b72 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .data-v-a5fc8b72 .line {
   color: #c0c4cc;
   font-size: 28rpx;

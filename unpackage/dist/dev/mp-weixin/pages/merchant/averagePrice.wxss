@@ -54,6 +54,12 @@
 .mt10.data-v-6bf6342c {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-6bf6342c {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .averagePricePage.data-v-6bf6342c {
   background-color: #f6f6f6;
   min-height: 100vh;

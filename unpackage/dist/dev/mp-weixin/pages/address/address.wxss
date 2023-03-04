@@ -54,6 +54,12 @@
 .mt10.data-v-db675620 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-db675620 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .set.data-v-db675620 {
   position: absolute;
   right: 20rpx;

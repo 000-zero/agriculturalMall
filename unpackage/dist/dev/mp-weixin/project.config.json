@@ -34,7 +34,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.29.0",
+  "libVersion": "",
   "appid": "wxa26676a4f89ba37c",
   "projectname": "agriculturalMall",
   "condition": {

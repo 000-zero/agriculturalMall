@@ -54,6 +54,12 @@
 .mt10.data-v-3931d3e5 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-3931d3e5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .goodsDetailPage.data-v-3931d3e5 {
   background-color: #f6f6f6;
   margin-left: 15rpx;
@@ -72,5 +78,51 @@
   font-size: 40rpx;
   margin-bottom: 15rpx;
   color: red;
+}
+.navigation.data-v-3931d3e5 {
+  position: fixed;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  display: flex;
+  border: solid 2rpx #f2f2f2;
+  background-color: #ffffff;
+  padding: 16rpx 0;
+  justify-content: space-between;
+}
+.navigation .left.data-v-3931d3e5 {
+  flex: 3;
+  display: flex;
+  font-size: 20rpx;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.navigation .left .collect.data-v-3931d3e5 {
+  position: absolute;
+  bottom: 0;
+}
+.navigation .left .item.data-v-3931d3e5 {
+  position: relative;
+}
+.navigation .right.data-v-3931d3e5 {
+  flex: 9;
+  display: flex;
+  font-size: 28rpx;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navigation .right .btn.data-v-3931d3e5 {
+  text-align: center;
+  line-height: 66rpx;
+  width: 90%;
+  border-radius: 10rpx;
+  color: #ffffff;
+}
+.navigation .right .cart.data-v-3931d3e5 {
+  background-color: #2979ff;
+  margin-right: 30rpx;
+}
+.navigation .right .buy.data-v-3931d3e5 {
+  background-color: #ff7900;
 }
 

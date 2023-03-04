@@ -54,6 +54,12 @@
 .mt10.data-v-0d1050f4 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-0d1050f4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .merchant.data-v-0d1050f4 {
   padding-left: 15rpx;
   padding-right: 15rpx;

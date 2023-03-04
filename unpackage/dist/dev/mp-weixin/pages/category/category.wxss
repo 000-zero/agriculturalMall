@@ -54,11 +54,32 @@
 .mt10.data-v-682a9774 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-682a9774 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .categoryPage.data-v-682a9774 {
   position: relative;
   margin-right: 15rpx;
 }
+.left.data-v-682a9774 {
+  position: fixed;
+  background-color: #f7f7f7;
+  width: 180rpx;
+  height: 100vh;
+}
 .listItemActive.data-v-682a9774 {
   background-color: #fff;
+}
+.place_pro.data-v-682a9774 {
+  color: #868686;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 340rpx;
+  display: block;
+  white-space: nowrap;
 }
 

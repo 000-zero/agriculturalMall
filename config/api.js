@@ -27,6 +27,9 @@ export const avatar = (params) =>http.post('/api/user/avatar',params)
 //获取商品详情
 export const getGoodsDetail = (params = {}) =>http.get('/api/goods',{params})
 
+//商品搜索
+export const searchGoods = (params = {}) =>http.get('/api/goods/search',{params})
+
 //购物车列表
 export const cartGoods = (params = {}) =>http.get('/api/carts',{params})
 

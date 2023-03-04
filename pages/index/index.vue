@@ -56,7 +56,7 @@
 					icon:'icon-caoyao'
 				}, {
 					name: 'star',
-					title: '采油米面',
+					title: '柴米油盐',
 					icon:'icon-liangyoumimian'
 				}, {
 					name: 'star',

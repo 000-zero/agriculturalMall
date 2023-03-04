@@ -102,16 +102,19 @@ var components
 try {
   components = {
     uSearch: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 292))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-search/u-search.vue */ 300))
     },
     uButton: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 357))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 365))
     },
     uTag: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 300))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 308))
+    },
+    uEmpty: function () {
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-empty/u-empty")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 383))
     },
     cardList: function () {
-      return __webpack_require__.e(/*! import() | components/cardList/cardList */ "components/cardList/cardList").then(__webpack_require__.bind(null, /*! @/components/cardList/cardList.vue */ 285))
+      return __webpack_require__.e(/*! import() | components/cardList/cardList */ "components/cardList/cardList").then(__webpack_require__.bind(null, /*! @/components/cardList/cardList.vue */ 293))
     },
   }
 } catch (e) {
@@ -193,7 +196,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/regenerator */ 28));
+var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ 18));
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ 30));
+var _api = __webpack_require__(/*! @/config/api.js */ 172);
+//
+//
+//
 //
 //
 //
@@ -224,12 +232,16 @@ var _default = {
     return {
       isShowHotSearch: 'true',
       keyword: '',
+      isSearchNull: 'true',
+      page: 1,
+      goods: [],
       tag: ['苹果', '草莓', '菠萝', '西瓜', '榴莲']
     };
   },
   methods: {
     handleTag: function handleTag(value) {
       this.keyword = value;
+      this.handleSearch();
     },
     handleSearch: function handleSearch() {
       var _this = this;
@@ -239,13 +251,47 @@ var _default = {
             switch (_context.prev = _context.next) {
               case 0:
                 _this.isShowHotSearch = false;
-              case 1:
+                _this.getData();
+                _this.goods = [];
+              case 3:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
       }))();
+    },
+    getData: function getData() {
+      var _this2 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
+        var params, res;
+        return _regenerator.default.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                params = {
+                  keyword: _this2.keyword,
+                  current_page: _this2.page
+                };
+                _context2.next = 3;
+                return (0, _api.searchGoods)(params);
+              case 3:
+                res = _context2.sent;
+                _this2.isSearchNull = res.data.length == 0 ? true : false;
+                console.log("sd", _this2.isSearchNull);
+                console.log("sd", _this2.isShowHotSearch);
+                _this2.goods = [].concat((0, _toConsumableArray2.default)(_this2.goods), (0, _toConsumableArray2.default)(res.data));
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    },
+    onReachBottom: function onReachBottom() {
+      this.page += 1;
+      this.getData();
     }
   }
 };

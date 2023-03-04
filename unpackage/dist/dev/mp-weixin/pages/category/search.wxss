@@ -54,6 +54,12 @@
 .mt10.data-v-6af323f0 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-6af323f0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .searchPage.data-v-6af323f0 {
   background-color: #f6f6f6;
   height: 100vh;

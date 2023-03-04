@@ -196,6 +196,12 @@
 .mt10 {
   margin-top: 10rpx;
 }
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .u-line-1 {
   display: -webkit-box !important;
   overflow: hidden;

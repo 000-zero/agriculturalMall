@@ -3,6 +3,9 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-swiper": "/node-modules/uview-ui/components/u-swiper/u-swiper",
-    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
+    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider",
+    "u-icon": "/node-modules/uview-ui/components/u-icon/u-icon",
+    "u-badge": "/node-modules/uview-ui/components/u-badge/u-badge",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
   }
 }

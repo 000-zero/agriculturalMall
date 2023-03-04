@@ -31,7 +31,7 @@
 					<view class="flexSpace mt10"
 						style="padding: 10rpx;">
 						<u-tag text="A级" />
-						<text class="ellipsis" style="margin-left: 10rpx;">{{columnItem2.title}} 1份/约500g</text>
+						<text class="ellipsis" style="margin-left: 10rpx;width:250rpx">{{columnItem2.title}} 1份/约500g</text>
 					</view>
 					<view class="flexSpace" style="padding: 10rpx;">
 						<view class="price" style="white-space:nowrap">{{columnItem2.price}}</view>
@@ -110,13 +110,6 @@
 		.img {
 			width: 100%;
 		}
-	}
-	
-	.ellipsis {
-		width: 250rpx;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 	}
 
 	.column:not(:last-of-type) {

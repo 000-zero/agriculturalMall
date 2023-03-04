@@ -54,6 +54,12 @@
 .mt10.data-v-441a3b84 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-441a3b84 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .hoverStyle.data-v-441a3b84 {
   background: #e5e5e5;
 }

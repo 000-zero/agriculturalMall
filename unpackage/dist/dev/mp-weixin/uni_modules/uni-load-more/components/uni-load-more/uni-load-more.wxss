@@ -54,6 +54,12 @@
 .mt10 {
   margin-top: 10rpx;
 }
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .uni-load-more {
   display: flex;
   flex-direction: row;

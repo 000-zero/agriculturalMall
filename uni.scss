@@ -112,4 +112,11 @@ $uni-font-size-paragraph:15px;
 	margin-top: 10rpx;
 }
 
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block
+}
+
 @import 'uview-ui/theme.scss';

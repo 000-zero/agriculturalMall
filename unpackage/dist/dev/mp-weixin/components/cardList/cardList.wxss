@@ -54,6 +54,12 @@
 .mt10.data-v-07d05c78 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-07d05c78 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .falls.data-v-07d05c78 {
   width: 100%;
   display: flex;
@@ -75,12 +81,6 @@
 }
 .column .img.data-v-07d05c78 {
   width: 100%;
-}
-.ellipsis.data-v-07d05c78 {
-  width: 250rpx;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .column.data-v-07d05c78:not(:last-of-type) {
   margin-right: 10rpx;

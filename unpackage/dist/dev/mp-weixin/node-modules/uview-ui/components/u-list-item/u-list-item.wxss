@@ -54,6 +54,12 @@
 .mt10.data-v-333350bd {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-333350bd {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 view.data-v-333350bd, scroll-view.data-v-333350bd, swiper-item.data-v-333350bd {
   display: flex;
   flex-direction: column;

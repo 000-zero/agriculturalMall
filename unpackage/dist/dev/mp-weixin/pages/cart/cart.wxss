@@ -54,6 +54,12 @@
 .mt10.data-v-0f00adf4 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-0f00adf4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .cardPage.data-v-0f00adf4 {
   min-height: 100vh;
   height: 100%;

@@ -54,6 +54,12 @@
 .mt10.data-v-c187ecf2 {
   margin-top: 10rpx;
 }
+.ellipsis.data-v-c187ecf2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
 .u-sticky.data-v-c187ecf2 {
   position: -webkit-sticky;
   position: sticky;
