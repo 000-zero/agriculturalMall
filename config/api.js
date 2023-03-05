@@ -98,3 +98,6 @@ export const commentDelete = (commentId) =>http.delete(`/api/comments/${commentI
 
 //点赞评论
 export const hasLike = (params = {}) =>http.post(`/api/comments/hasLike`,params)
+
+//获取用户是否收藏某个物品
+export const if_collect = (params = {}) =>http.get(`/api/collect/user/`,{params})

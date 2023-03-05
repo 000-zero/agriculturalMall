@@ -70,6 +70,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/goods/goodsDetail",
+          "query": "id=249",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

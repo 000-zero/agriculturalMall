@@ -11,7 +11,8 @@
     "pages/order/orderDetails",
     "pages/merchant/merchant",
     "pages/merchant/averagePrice",
-    "pages/goods/goodsDetail"
+    "pages/goods/goodsDetail",
+    "pages/cart/preview"
   ],
   "subPackages": [],
   "window": {

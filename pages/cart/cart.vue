@@ -1,10 +1,13 @@
 <template>
 	<view class="cardPage">
-		<view class="checkboxGoods" v-for="item in goodsList">
+		<view class="checkboxGoods"
+			v-for="item in goodsList">
 			<u-checkbox-group placement="column"
-				shape='circle' @change="checkChange(item.id)">
+				shape='circle'
+				@change="checkChange(item.id)">
 				<view class="flex cartItemBox">
-					<u-checkbox :checked="item.is_checked?true:false" :name="item.id" />
+					<u-checkbox :checked="item.is_checked?true:false"
+						:name="item.id" />
 					<image style="width: 150rpx;max-height: 200px;margin-right: 10rpx;"
 						mode="widthFix"
 						:src="item.goods.cover1">
@@ -12,13 +15,16 @@
 							<view class="flex">
 								<u-tag type="success"
 									text="A级" />
-								<text style="margin-left: 10rpx;width: 400rpx;" class="ellipsis">{{item.goods.title}}</text>
+								<text style="margin-left: 10rpx;width: 400rpx;"
+									class="ellipsis">{{item.goods.title}}</text>
 							</view>
 							<!-- <text style="display: block;">1份/约500g</text> -->
 							<view class="flexSpace">
 								<text style="width: 200rpx;color: red;font-size: 35rpx;">{{item.goods.price}}</text>
 								<view>
-									<u-number-box v-model="item.num"/>
+									<u-number-box @change="numChange"
+										:name="item.id"
+										v-model="item.num" />
 								</view>
 								<u-icon name="trash"
 									color="#e83333"
@@ -35,6 +41,7 @@
 					@change="if_allCheck">
 					<u-checkbox label="全选"
 						size="25"
+						:checked="allCheck"
 						shape="circle" />
 				</u-checkbox-group>
 			</view>
@@ -65,8 +72,8 @@
 	export default {
 		data() {
 			return {
-				radioValue: 'false',
-				goodsList:[]
+				allCheck: 'false',
+				goodsList: []
 			}
 		},
 		computed: {
@@ -77,8 +84,7 @@
 						return true
 					}
 				}).reduce((pre, goods) => { //价格累加
-					console.log('goods',goods.goods.price.slice(0,3))
-					return parseInt(pre) + Number(goods.goods.price.slice(0,3)) * goods.num //乘商品数量
+					return (Number(pre) + Number(goods.goods.price.slice(0, 3) * goods.num)).toFixed(2) //乘商品数量
 				}, 0)
 			}
 		},
@@ -90,7 +96,9 @@
 		},
 		methods: {
 			async if_allCheck() {
-				this.radioValue = this.radioValue ? false : true
+				this.allCheck = this.allCheck ? false : true
+				await allCheck(this.allCheck)
+				this.getCartGoods()
 			},
 			async getCartGoods() {
 				const params = {
@@ -98,13 +106,45 @@
 				}
 				const data = await cartGoods(params)
 				this.goodsList = data.data
-				console.log("this.goodsList",this.goodsList)
+				
+				let temp = this.goodsList.filter((goods) => { //过滤掉没有选中商品
+					if (!goods.is_checked) {
+						return true
+					}
+				})
+				if(temp.length === 0) this.allCheck =true;
+				else if(temp.length !== 2)  this.allCheck =false;
 			},
 			async checkChange(id) {
 				await isCheck(id)
-				console.log("id",id)
 				this.getCartGoods()
 			},
+			// 商品数量改变
+			async numChange(val) {
+				// 通过设置index获取（购物车商品的id）既val中第二参数
+				const {
+					value,
+					name
+				} = val
+				console.log('val', val)
+				await numChange(val).then(() => {
+					this.getCartGoods()
+				})
+			},
+			submit (){
+				let cartArr = []
+				//选中被选中的商品
+				this.goodsList.every(item => {
+					if (item.is_checked==1) {
+						cartArr.push(item)
+					}
+					return item.is_checked
+				})
+				this.$u.vuex('vuex_cart',cartArr)
+				this.$u.route({
+					url:"pages/cart/preview",
+				})
+			}
 		}
 	}
 </script>
@@ -141,7 +181,7 @@
 			width: 100%;
 			height: 100rpx;
 		}
-		
+
 		.bottomFixed {
 			display: flex;
 			bottom: 0;
@@ -152,18 +192,18 @@
 			left: 0;
 			right: 0;
 			background-color: #fff;
-			
-			.checkbox{
+
+			.checkbox {
 				flex: 5;
 			}
-			
-			.calculate_price{
+
+			.calculate_price {
 				display: flex;
 				flex: 7;
 				justify-content: space-around;
 				align-items: center;
-		
-				.button{
+
+				.button {
 					width: 90px;
 				}
 			}

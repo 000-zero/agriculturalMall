@@ -102,22 +102,22 @@ var components
 try {
   components = {
     uCheckboxGroup: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-checkbox-group/u-checkbox-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-checkbox-group/u-checkbox-group")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-checkbox-group/u-checkbox-group.vue */ 332))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-checkbox-group/u-checkbox-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-checkbox-group/u-checkbox-group")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-checkbox-group/u-checkbox-group.vue */ 340))
     },
     uCheckbox: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-checkbox/u-checkbox */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-checkbox/u-checkbox")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-checkbox/u-checkbox.vue */ 340))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-checkbox/u-checkbox */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-checkbox/u-checkbox")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-checkbox/u-checkbox.vue */ 348))
     },
     uTag: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 308))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 316))
     },
     uNumberBox: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-number-box/u-number-box */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-number-box/u-number-box")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-number-box/u-number-box.vue */ 348))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-number-box/u-number-box */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-number-box/u-number-box")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-number-box/u-number-box.vue */ 356))
     },
     uIcon: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 356))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 364))
     },
     uButton: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 365))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 373))
     },
   }
 } catch (e) {
@@ -240,10 +240,17 @@ var _api = __webpack_require__(/*! @/config/api.js */ 172);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
-      radioValue: 'false',
+      allCheck: 'false',
       goodsList: []
     };
   },
@@ -257,8 +264,7 @@ var _default = {
         }
       }).reduce(function (pre, goods) {
         //价格累加
-        console.log('goods', goods.goods.price.slice(0, 3));
-        return parseInt(pre) + Number(goods.goods.price.slice(0, 3)) * goods.num; //乘商品数量
+        return (Number(pre) + Number(goods.goods.price.slice(0, 3) * goods.num)).toFixed(2); //乘商品数量
       }, 0);
     }
   },
@@ -277,8 +283,12 @@ var _default = {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.radioValue = _this.radioValue ? false : true;
-              case 1:
+                _this.allCheck = _this.allCheck ? false : true;
+                _context.next = 3;
+                return (0, _api.allCheck)(_this.allCheck);
+              case 3:
+                _this.getCartGoods();
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -289,7 +299,7 @@ var _default = {
     getCartGoods: function getCartGoods() {
       var _this2 = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
-        var params, data;
+        var params, data, temp;
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -302,8 +312,14 @@ var _default = {
               case 3:
                 data = _context2.sent;
                 _this2.goodsList = data.data;
-                console.log("this.goodsList", _this2.goodsList);
-              case 6:
+                temp = _this2.goodsList.filter(function (goods) {
+                  //过滤掉没有选中商品
+                  if (!goods.is_checked) {
+                    return true;
+                  }
+                });
+                if (temp.length === 0) _this2.allCheck = true;else if (temp.length !== 2) _this2.allCheck = false;
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -321,15 +337,52 @@ var _default = {
                 _context3.next = 2;
                 return (0, _api.isCheck)(id);
               case 2:
-                console.log("id", id);
                 _this3.getCartGoods();
-              case 4:
+              case 3:
               case "end":
                 return _context3.stop();
             }
           }
         }, _callee3);
       }))();
+    },
+    // 商品数量改变
+    numChange: function numChange(val) {
+      var _this4 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4() {
+        var value, name;
+        return _regenerator.default.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                // 通过设置index获取（购物车商品的id）既val中第二参数
+                value = val.value, name = val.name;
+                console.log('val', val);
+                _context4.next = 4;
+                return (0, _api.numChange)(val).then(function () {
+                  _this4.getCartGoods();
+                });
+              case 4:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    },
+    submit: function submit() {
+      var cartArr = [];
+      //选中被选中的商品
+      this.goodsList.every(function (item) {
+        if (item.is_checked == 1) {
+          cartArr.push(item);
+        }
+        return item.is_checked;
+      });
+      this.$u.vuex('vuex_cart', cartArr);
+      this.$u.route({
+        url: "pages/cart/preview"
+      });
     }
   }
 };

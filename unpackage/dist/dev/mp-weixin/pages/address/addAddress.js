@@ -102,10 +102,10 @@ var components
 try {
   components = {
     uniDataPicker: function () {
-      return Promise.all(/*! import() | uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker.vue */ 391))
+      return Promise.all(/*! import() | uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-data-picker/components/uni-data-picker/uni-data-picker.vue */ 399))
     },
     uButton: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 365))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 373))
     },
   }
 } catch (e) {
@@ -261,7 +261,7 @@ var _default = {
     };
   },
   onLoad: function onLoad() {
-    // this.modify()
+    this.modify();
   },
   methods: {
     onchange: function onchange(e) {
@@ -281,7 +281,7 @@ var _default = {
             switch (_context.prev = _context.next) {
               case 0:
                 _this.data = _this.$store.state.addressInformation;
-                if (!(_this.data != undefined)) {
+                if (!(_this.data != undefined && _this.data != '')) {
                   _context.next = 8;
                   break;
                 }
@@ -351,7 +351,7 @@ var _default = {
                   setTimeout(function () {
                     _this2.$u.route({
                       type: 'reLaunch',
-                      url: "/pages/auth/auth"
+                      url: "/pages/user/user"
                     });
                   }, 1500);
                 }

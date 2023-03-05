@@ -94,7 +94,7 @@
 			};
 		},
 		onLoad() {
-			// this.modify()
+			this.modify()
 		},
 		methods: {
 			onchange(e) {
@@ -112,7 +112,7 @@
 				// #ifdef H5
 				this.data = this.$route.query.params
 				// #endif
-				if (this.data != undefined) {
+				if (this.data != undefined && this.data != '') {
 					this.change = true
 					let address = this.data
 					const res = await addressInfo(address).catch(err => {
@@ -160,7 +160,7 @@
 					setTimeout(() => {
 						this.$u.route({
 							type: 'reLaunch',
-							url: "/pages/auth/auth"
+							url: "/pages/user/user"
 						})
 					}, 1500)
 				}
