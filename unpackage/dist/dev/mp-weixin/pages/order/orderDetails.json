@@ -3,7 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "u-tag": "/node-modules/uview-ui/components/u-tag/u-tag",
-    "card-list": "/components/cardList/cardList",
+    "shop-list": "/components/shopList/shopList",
     "u-empty": "/node-modules/uview-ui/components/u-empty/u-empty",
     "u-button": "/node-modules/uview-ui/components/u-button/u-button",
     "pay-keyboard": "/components/mi-payKeyboard/mi-payKeyboard"

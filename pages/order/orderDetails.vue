@@ -18,8 +18,8 @@
 				</view>
 			</view>
 			<view class="container">
-				<view v-for="(item,index) in 6" :key="index">
-					<cardList/>
+				<view v-for="(item,index) in shoplist" :key="index">
+					<shopList :item="item"></shopList>
 				</view>
 				<u-empty class="empty" icon-size="100px" :show="totalPrice>0?false:true" mode="order"></u-empty>
 			</view>
@@ -27,7 +27,7 @@
 				<view class="footer_container">
 					<view class="card">
 						<text class="title">共计</text>
-						<text class="num">{{qq}}</text>
+						<text class="num">{{num}}</text>
 						<text class="title">商品</text>
 					</view>
 					<view class="tp card">
@@ -77,7 +77,7 @@
 			}
 		},
 		onLoad() {
-			// this.orderInfo()
+			this.orderInfo()
 		},
 		components: {
 			payKeyboard
@@ -113,7 +113,6 @@
 					this.name = res.address.name
 					this.phone = res.address.phone
 					this.order_no = res.order.order_no
-					console.log(typeof this.order_no)
 					this.created_at = res.order.createdAt
 					console.log(typeof this.created_at)
 

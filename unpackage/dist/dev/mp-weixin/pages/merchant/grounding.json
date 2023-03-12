@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "农物上传",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u--input": "/node-modules/uview-ui/components/u--input/u--input",
+    "uni-data-select": "/uni_modules/uni-data-select/components/uni-data-select/uni-data-select",
+    "u-upload": "/node-modules/uview-ui/components/u-upload/u-upload",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
+  }
+}

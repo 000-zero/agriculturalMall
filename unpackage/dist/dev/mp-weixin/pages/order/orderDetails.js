@@ -102,16 +102,16 @@ var components
 try {
   components = {
     uTag: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 316))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-tag/u-tag.vue */ 330))
     },
-    cardList: function () {
-      return __webpack_require__.e(/*! import() | components/cardList/cardList */ "components/cardList/cardList").then(__webpack_require__.bind(null, /*! @/components/cardList/cardList.vue */ 301))
+    shopList: function () {
+      return __webpack_require__.e(/*! import() | components/shopList/shopList */ "components/shopList/shopList").then(__webpack_require__.bind(null, /*! @/components/shopList/shopList.vue */ 437))
     },
     uEmpty: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-empty/u-empty")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 391))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-empty/u-empty")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 387))
     },
     uButton: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 373))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 395))
     },
   }
 } catch (e) {
@@ -232,7 +232,7 @@ var _api = __webpack_require__(/*! @/config/api.js */ 172);
 //
 var payKeyboard = function payKeyboard() {
   __webpack_require__.e(/*! require.ensure | components/mi-payKeyboard/mi-payKeyboard */ "components/mi-payKeyboard/mi-payKeyboard").then((function () {
-    return resolve(__webpack_require__(/*! @/components/mi-payKeyboard/mi-payKeyboard.vue */ 423));
+    return resolve(__webpack_require__(/*! @/components/mi-payKeyboard/mi-payKeyboard.vue */ 444));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -257,7 +257,7 @@ var _default = {
     };
   },
   onLoad: function onLoad() {
-    // this.orderInfo()
+    this.orderInfo();
   },
   components: {
     payKeyboard: payKeyboard
@@ -296,7 +296,6 @@ var _default = {
                   _this.name = res.address.name;
                   _this.phone = res.address.phone;
                   _this.order_no = res.order.order_no;
-                  console.log((0, _typeof2.default)(_this.order_no));
                   _this.created_at = res.order.createdAt;
                   console.log((0, _typeof2.default)(_this.created_at));
                   if (res.order.status == 1) _this.text = "未支付";else if (res.order.status == 2) _this.text = "已付款";else if (res.order.status == 3) _this.text = "已发货";else if (res.order.status == 4) _this.text = "已收货";else if (res.order.status == 5) _this.text = "已过期";

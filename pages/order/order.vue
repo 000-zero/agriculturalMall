@@ -55,12 +55,7 @@
 				}, {
 					name: '已过期'
 				}],
-				goodsList: [{
-					id: 1,
-					order_no: '132132',
-					order_no: 'sdad',
-					amount: 'sad'
-				}],
+				goodsList: [],
 				current: 0,
 				page: 1,
 				isLast: false,
@@ -68,7 +63,7 @@
 			}
 		},
 		onShow() {
-			// this.myOrders()
+			this.myOrders()
 		},
 		methods: {
 			async myOrders() {

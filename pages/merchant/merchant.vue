@@ -15,17 +15,17 @@
 			</template>
 		</view>
 		<button class="btn1" @click="goAveragePrice">查看地区农产品均价</button>
-		<button class="btn1">我的商品</button>
+		<button class="btn1" @click="goGrounding">上架商品</button>
 		<u-divider text="我的商品" />
-		<view class="flexSpace goodsInf">
+		<view class="flexSpace goodsInf" v-for="item in goodsList">
 			<view class="flex">
 				<image mode='widthFix'
 					style="width: 200rpx;"
-					src="../../static/logo.png" />
+					:src="item.cover1" />
 				<view class="flexSpace"
 					style="flex-direction: column;margin-left: 15rpx;">
-					<text class="block ellipsis">商品名称</text>
-					<text class="block ellipsis">价格：6.00</text>
+					<text class="block ellipsis">{{item.title}}</text>
+					<text class="block ellipsis">{{item.price}}</text>
 				</view>
 			</view>
 			<view>
@@ -36,6 +36,7 @@
 	</view>
 </template>
 <script>
+	import {merchantGoods} from '@/config/api.js';
 	export default {
 		data() {
 			return {
@@ -48,14 +49,30 @@
 				}, {
 					icon: 'icon-moban',
 					name: '全部订单'
-				}]
+				}],
+				goodsList:[]
 			}
+		},
+		async onShow() {
+			this.getData()
 		},
 		methods: {
 			goAveragePrice(){
 				uni.$u.route({
 					url: 'pages/merchant/averagePrice',
 				})
+			},
+			goGrounding(){
+				uni.$u.route({
+					url: 'pages/merchant/grounding',
+				})
+			},
+			async getData(){
+				const params = {
+					farmers_id: 2,
+				}
+				const res = await merchantGoods(params)
+				this.goodsList = res.data
 			}
 		}
 	}

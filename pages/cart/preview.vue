@@ -50,7 +50,7 @@
 				</view>
 			</view>
 		</view>
-		<view>
+		<view style="z-index: 9;">
 			<payKeyboard class="payKeyboard"
 				v-if="show"
 				title="Mi安全键盘"
@@ -105,7 +105,6 @@
 				const res = await preview()
 				console.log('res', res)
 				this.shoplist = res.cart
-				console.log('this.shoplist', this.shoplist)
 				// #ifdef MP-WEIXIN
 				const data = this.$store.state.data
 				// #endif
@@ -152,6 +151,7 @@
 					address_id: this.address_id,
 					totalPrice: this.totalPrice
 				}
+				console.log('params',params)
 				const res = await orders(params)
 				this.orders_id = res.order.id
 				this.show = true
@@ -225,9 +225,7 @@
 		margin-top: 5px;
 		margin-bottom: 5px;
 		height: 100rpx;
-		z-index: 99;
 		background-color: #fff;
-		z-index: 1;
 
 		.left {
 			// display: flex;
@@ -267,6 +265,7 @@
 		margin-top: 130rpx;
 		padding-left: 20rpx;
 		padding-right: 20rpx;
+		z-index: -1;
 	}
 
 	.footer {

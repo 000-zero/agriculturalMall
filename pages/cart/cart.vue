@@ -1,39 +1,42 @@
 <template>
 	<view class="cardPage">
-		<view class="checkboxGoods"
-			v-for="item in goodsList">
-			<u-checkbox-group placement="column"
-				shape='circle'
-				@change="checkChange(item.id)">
-				<view class="flex cartItemBox">
-					<u-checkbox :checked="item.is_checked?true:false"
-						:name="item.id" />
-					<image style="width: 150rpx;max-height: 200px;margin-right: 10rpx;"
-						mode="widthFix"
-						:src="item.goods.cover1">
-						<view style="width: 100%;">
-							<view class="flex">
-								<u-tag type="success"
-									text="A级" />
-								<text style="margin-left: 10rpx;width: 400rpx;"
-									class="ellipsis">{{item.goods.title}}</text>
-							</view>
-							<!-- <text style="display: block;">1份/约500g</text> -->
-							<view class="flexSpace">
-								<text style="width: 200rpx;color: red;font-size: 35rpx;">{{item.goods.price}}</text>
-								<view>
-									<u-number-box @change="numChange"
-										:name="item.id"
-										v-model="item.num" />
+		<template v-if="goodsList.length != 0">
+			<view class="checkboxGoods"
+				v-for="item in goodsList">
+				<u-checkbox-group placement="column"
+					shape='circle'
+					@change="checkChange(item.id)">
+					<view class="flex cartItemBox">
+						<u-checkbox :checked="item.is_checked?true:false"
+							:name="item.id" />
+						<image style="width: 150rpx;max-height: 200px;margin-right: 10rpx;"
+							mode="widthFix"
+							:src="item.goods.cover1">
+							<view style="width: 100%;">
+								<view class="flex">
+									<u-tag type="success"
+										text="A级" />
+									<text style="margin-left: 10rpx;width: 400rpx;"
+										class="ellipsis">{{item.goods.title}}</text>
 								</view>
-								<u-icon name="trash"
-									color="#e83333"
-									size="36" />
+								<!-- <text style="display: block;">1份/约500g</text> -->
+								<view class="flexSpace">
+									<text style="width: 200rpx;color: red;font-size: 35rpx;">{{item.goods.price}}</text>
+									<view>
+										<u-number-box @change="numChange"
+											:name="item.id"
+											v-model="item.num" />
+									</view>
+									<u-icon name="trash"
+										color="#e83333"
+										size="36" />
+								</view>
 							</view>
-						</view>
-				</view>
-			</u-checkbox-group>
-		</view>
+					</view>
+				</u-checkbox-group>
+			</view>
+		</template>
+		<u-empty mode="car" v-else/>
 		<!-- 结算 -->
 		<view class="bottomFixed">
 			<view class="checkbox">
@@ -114,6 +117,7 @@
 				})
 				if(temp.length === 0) this.allCheck =true;
 				else if(temp.length !== 2)  this.allCheck =false;
+				if(this.goodsList.length == 0) this.allCheck =false;
 			},
 			async checkChange(id) {
 				await isCheck(id)

@@ -12,7 +12,9 @@
     "pages/merchant/merchant",
     "pages/merchant/averagePrice",
     "pages/goods/goodsDetail",
-    "pages/cart/preview"
+    "pages/cart/preview",
+    "pages/merchant/grounding",
+    "pages/market/market"
   ],
   "subPackages": [],
   "window": {
@@ -53,5 +55,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

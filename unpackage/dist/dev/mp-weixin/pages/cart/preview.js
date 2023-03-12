@@ -102,13 +102,13 @@ var components
 try {
   components = {
     uIcon: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 364))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-icon/u-icon.vue */ 378))
     },
     uButton: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 373))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 395))
     },
     uEmpty: function () {
-      return Promise.all(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-empty/u-empty")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 391))
+      return Promise.all(/*! import() | node-modules/uview-ui/components/u-empty/u-empty */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/uview-ui/components/u-empty/u-empty")]).then(__webpack_require__.bind(null, /*! uview-ui/components/u-empty/u-empty.vue */ 387))
     },
   }
 } catch (e) {
@@ -243,7 +243,7 @@ var _api = __webpack_require__(/*! @/config/api.js */ 172);
 //
 var payKeyboard = function payKeyboard() {
   __webpack_require__.e(/*! require.ensure | components/mi-payKeyboard/mi-payKeyboard */ "components/mi-payKeyboard/mi-payKeyboard").then((function () {
-    return resolve(__webpack_require__(/*! @/components/mi-payKeyboard/mi-payKeyboard.vue */ 423));
+    return resolve(__webpack_require__(/*! @/components/mi-payKeyboard/mi-payKeyboard.vue */ 444));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -303,24 +303,23 @@ var _default = {
                 res = _context2.sent;
                 console.log('res', res);
                 _this2.shoplist = res.cart;
-                console.log('this.shoplist', _this2.shoplist);
                 data = _this2.$store.state.data;
                 if (!(data != undefined)) {
-                  _context2.next = 18;
+                  _context2.next = 17;
                   break;
                 }
-                _context2.next = 10;
+                _context2.next = 9;
                 return (0, _api.addressInfo)(data);
-              case 10:
+              case 9:
                 addressData = _context2.sent;
                 console.log(addressData);
                 _this2.location = addressData.address.province + "-" + addressData.address.city + "-" + addressData.address.county + "-" + addressData.address.address;
                 _this2.name = addressData.address.name;
                 _this2.phone = addressData.address.phone;
                 _this2.address_id = addressData.address.id;
-                _context2.next = 23;
+                _context2.next = 22;
                 break;
-              case 18:
+              case 17:
                 _this2.address = res.address.filter(function (item) {
                   return item.is_default ? true : false;
                 });
@@ -328,7 +327,7 @@ var _default = {
                 _this2.name = _this2.address[0].name;
                 _this2.phone = _this2.address[0].phone;
                 _this2.address_id = _this2.address[0].id;
-              case 23:
+              case 22:
               case "end":
                 return _context2.stop();
             }
@@ -365,13 +364,14 @@ var _default = {
                   address_id: _this4.address_id,
                   totalPrice: _this4.totalPrice
                 };
-                _context3.next = 3;
+                console.log('params', params);
+                _context3.next = 4;
                 return (0, _api.orders)(params);
-              case 3:
+              case 4:
                 res = _context3.sent;
                 _this4.orders_id = res.order.id;
                 _this4.show = true;
-              case 6:
+              case 7:
               case "end":
                 return _context3.stop();
             }

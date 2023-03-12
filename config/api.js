@@ -101,3 +101,15 @@ export const hasLike = (params = {}) =>http.post(`/api/comments/hasLike`,params)
 
 //获取用户是否收藏某个物品
 export const if_collect = (params = {}) =>http.get(`/api/collect/user/`,{params})
+
+//市场平均价
+export const getMarket = (params = {}) => http.get('/api/goods/market',{params})
+
+//某农产品市场平均价
+export const marketSearch = (params = {}) =>http.get('/api/goods/marketSearch',{params})
+
+// 农户上传商品信息
+export const addGoods = (params = {}) =>http.post(`/api/goods/addGoodsF`,params)
+
+// 农户获取自己的商品信息
+export const merchantGoods = (params = {}) =>http.get(`/api/goods/merchant`,{params})
