@@ -39,6 +39,8 @@
 <script>
 	import {
 		addGoods,
+		getGoodsDetail,
+		updateGoodsF
 	} from "@/config/api.js"
 	export default {
 		data() {
@@ -72,6 +74,23 @@
 				place_pro:null,
 				price:null,
 				category_id:null,
+				goodsID:null
+			}
+		},
+		async onLoad(option){
+			if(option.goodsID){
+				const params = {}
+				params.goods = option.goodsID
+				this.goodsID = option.goodsID
+				const res = await getGoodsDetail(params)
+				this.title = res.data.title
+				this.category_id = res.data.category_id
+				this.price = res.data.price
+				this.place_pro = res.data.place_pro
+				this.detail = res.data.detail
+				if(res.data.cover1) this.fileList1.push(res.data.cover1);
+				if(res.data.cover2) this.fileList1.push(res.data.cover2);
+				if(res.data.cover3) this.fileList1.push(res.data.cover3);
 			}
 		},
 		methods: {
@@ -95,20 +114,35 @@
 				let fileListLen = this[`fileList${event.name}`].length
 			},
 			async submit(){
-				await addGoods({
+				const params = {
 					"user_id": 2,
 					'title':this.title,
 					'detail':this.detail,
 					'place_pro':this.place_pro,
 					'price':this.price,
 					'category_id':this.category_id,
-				}).then(res=>{
-					if(this.$store.state.statusCode != 422){
-						for (let i = 0; i < this.lists.length; i++) {
-							const result = this.uploadFilePromise(this.lists[i].url,i,res.goods_id)
+					'goods_id':''
+				}
+				if(this.goodsID != null){
+					params.goods_id = this.goodsID
+					await updateGoodsF(params).then(res=>{
+						if(this.$store.state.statusCode != 422){
+							for (let i = 0; i < this.lists.length; i++) {
+								const result = this.uploadFilePromise(this.lists[i].url,i,res.goods_id)
+							}
+							this.$u.toast('更新成功')
 						}
-					}
-				})
+					})
+				}else{
+					await addGoods(params).then(res=>{
+						if(this.$store.state.statusCode != 422){
+							for (let i = 0; i < this.lists.length; i++) {
+								const result = this.uploadFilePromise(this.lists[i].url,i,res.goods_id)
+							}
+							this.$u.toast('上传成功')
+						}
+					})
+				}
 			},
 			uploadFilePromise(url,i,goods_id) {
 				return new Promise((resolve, reject) => {

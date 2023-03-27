@@ -28,6 +28,7 @@
 											v-model="item.num" />
 									</view>
 									<u-icon name="trash"
+										@tap="removeGoods(item.id)"
 										color="#e83333"
 										size="36" />
 								</view>
@@ -36,7 +37,8 @@
 				</u-checkbox-group>
 			</view>
 		</template>
-		<u-empty mode="car" v-else/>
+		<u-empty mode="car"
+			v-else />
 		<!-- 结算 -->
 		<view class="bottomFixed">
 			<view class="checkbox">
@@ -109,15 +111,14 @@
 				}
 				const data = await cartGoods(params)
 				this.goodsList = data.data
-				
 				let temp = this.goodsList.filter((goods) => { //过滤掉没有选中商品
 					if (!goods.is_checked) {
 						return true
 					}
 				})
-				if(temp.length === 0) this.allCheck =true;
-				else if(temp.length !== 2)  this.allCheck =false;
-				if(this.goodsList.length == 0) this.allCheck =false;
+				if (temp.length === 0) this.allCheck = true;
+				else if (temp.length !== 2) this.allCheck = false;
+				if (this.goodsList.length == 0) this.allCheck = false;
 			},
 			async checkChange(id) {
 				await isCheck(id)
@@ -135,18 +136,29 @@
 					this.getCartGoods()
 				})
 			},
-			submit (){
+			// 移出购物车
+			async removeGoods(id) {
+				const params = {
+					carts_id: id
+				}
+				// delCartGoods
+				await delCartGoods(id)
+				// 删除商品后进行提示   再次调用获取商品列表
+				this.$u.toast("移出购物车成功")
+				this.getCartGoods()
+			},
+			submit() {
 				let cartArr = []
 				//选中被选中的商品
 				this.goodsList.every(item => {
-					if (item.is_checked==1) {
+					if (item.is_checked == 1) {
 						cartArr.push(item)
 					}
 					return item.is_checked
 				})
-				this.$u.vuex('vuex_cart',cartArr)
+				this.$u.vuex('vuex_cart', cartArr)
 				this.$u.route({
-					url:"pages/cart/preview",
+					url: "pages/cart/preview",
 				})
 			}
 		}

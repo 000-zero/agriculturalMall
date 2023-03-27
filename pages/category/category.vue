@@ -48,11 +48,11 @@
 							</view>
 						</view>
 					</navigator>
-					<view style="position: relative;top: -40rpx;">
-						<view style="position: absolute;top: -25rpx;right: 10rpx;z-index: 2;">
+					<view @click="addCart(item.id,index)" style="position: relative;top: -40rpx;">
+						<view  style="position: absolute;top: -25rpx;right: 10rpx;z-index: 2;">
 							<u-badge numberType="limit"
 								max="99"
-								value="6" />
+								:value="tempCartNum[index]" />
 						</view>
 						<view style="position: absolute;top: -10rpx;right: 25rpx;z-index: 1;">
 							<i class="iconfont icon-plus-circle-fill"
@@ -67,7 +67,7 @@
 </template>
 <script>
 	import {
-		getindex
+		category,addCart
 	} from '@/config/api.js';
 	export default {
 		data() {
@@ -77,11 +77,19 @@
 				page: 1,
 				category_id: null,
 				selecedListItem: 0,
-				indexList: ['全部', '蔬菜', '水果', '水产', '农副加工', '花草树木', '柴米油盐']
+				indexList: ['全部', '蔬菜', '水果', '水产', '农副加工', '花草树木', '柴米油盐'],
+				tempCartNum:[],
+				categoryTitle:null
 			}
 		},
-		async onLoad() {
+		async onLoad(option) {
 			this.getData()
+			if(option){
+				this.categoryTitle = this.indexList.indexOf(option.title)
+				this.selecedListItem = this.categoryTitle
+				this.handleListItem(this.selecedListItem)
+				this.getData()
+			}
 		},
 		methods: {
 			async handleListItem(index) {
@@ -107,13 +115,28 @@
 					page: this.page,
 					category_id: this.category_id
 				}
-				const res = await getindex(params)
+				const res = await category(params)
 				this.goods = [...this.goods, ...res.goods.data]
+				
+				for(let goodsItem of this.goods){
+					this.tempCartNum.push(goodsItem.cartNum)
+				}
 			},
 			onReachBottom() {
 				this.page += 1
 				this.getData()
-			}
+			},
+			async addCart(id,index) {
+				// if (!this.$u.utils.isLogin()) {} 
+				// 准备参数
+				const params = {
+					goods_id: id
+				}
+				// 发送请求
+				const res = await addCart(params)
+				this.getData()
+				this.tempCartNum[index] = this.tempCartNum[index] + 1;
+			},
 		}
 	}
 </script>

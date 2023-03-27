@@ -1,12 +1,12 @@
 <template>
 	<view class="userPage">
 		<view class="flexAlignCenter">
-			<u-avatar size="50" />
-			<text style="margin-left: 20rpx;font-size: 40rpx;">手机/用户名字</text>
+			<oss-upload></oss-upload>
+			<text style="margin-left: 20rpx;font-size: 40rpx;">{{vuex_user.name}}</text>
 		</view>
 		<view class="order flexAlignCenter">
-			<template v-for="item in orderStatus">
-				<view class="flexColumnCenter" @click="goOrder">
+			<template v-for="(item,index) in orderStatus">
+				<view class="flexColumnCenter" @click="goOrder(index)">
 					<view :class='"iconfont " + item.icon'
 						style="font-size: 70rpx;color: #3fd72c;" />
 					<view>{{item.name}}</view>
@@ -21,11 +21,11 @@
 					style="font-size: 70rpx;color: #3fd72c;" />
 				<view>收获地址</view>
 			</view>
-			<view class="flexColumnCenter">
+<!-- 			<view class="flexColumnCenter">
 				<view class='iconfont icon-addteam'
 					style="font-size: 70rpx;color: #3fd72c;" />
 				<view>企业购</view>
-			</view>
+			</view> -->
 			<view class="flexColumnCenter" @click="goMerchant">
 				<view class='iconfont icon-addteam'
 					style="font-size: 70rpx;color: #3fd72c;" />
@@ -35,6 +35,10 @@
 	</view>
 </template>
 <script>
+	import {
+		Logout,
+		getUser
+	} from "@/config/api.js"
 	export default {
 		data() {
 			return {
@@ -56,15 +60,19 @@
 				}]
 			}
 		},
+		onLoad() {
+			if (this.$u.utils.isLogin()) return
+			getUser()
+		},
 		methods: {
 			goAddress() {
 				uni.$u.route({
 					url: 'pages/address/address',
 				})
 			},
-			goOrder(){
+			goOrder(index){
 				uni.$u.route({
-					url: 'pages/order/order',
+					url: `pages/order/order?index=${index}`,
 				})
 			},
 			goMerchant(){

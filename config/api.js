@@ -3,6 +3,9 @@ const http = uni.$u.http
 //获取首页数据
 export const getindex = (params = {}) => http.get('/api/index',{params})
 
+//获取首页数据
+export const category = (params = {}) => http.get('/api/index/category',{params})
+
 //测试需要的登录权限
 export const gettoken = (params) =>http.post('/api/users/login',params)
 
@@ -78,8 +81,14 @@ export const orders = (params = {}) =>http.post('/api/orders',params)
 //支付
 export const pay = (params = {}) =>http.post('/api/orders/pay',params)
 
+//退货
+export const returnReson = (params = {}) =>http.post('/api/orders/return',params)
+
 //订单列表
 export const ordersList = (params = {}) =>http.get('/api/orders',{params})
+
+//农户订单列表
+export const peasantOrders = (params = {}) =>http.post('/api/orders/peasant',params)
 
 //获取订单详情
 export const ordersInfo = (order) =>http.get(`/api/orders/${order}`)
@@ -111,5 +120,11 @@ export const marketSearch = (params = {}) =>http.get('/api/goods/marketSearch',{
 // 农户上传商品信息
 export const addGoods = (params = {}) =>http.post(`/api/goods/addGoodsF`,params)
 
+// 农户产品信息更新
+export const updateGoodsF = (params = {}) =>http.post(`/api/goods/updateGoodsF`,params)
+
 // 农户获取自己的商品信息
 export const merchantGoods = (params = {}) =>http.get(`/api/goods/merchant`,{params})
+
+//农户下架商品
+export const delCartGoodsF = goods_id =>http.delete(`/api/goods/delF/${goods_id}`)

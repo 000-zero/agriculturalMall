@@ -5,9 +5,9 @@
 			<text class="block">退单数量：6单</text>
 		</view>
 		<view class="order flexAlignCenter">
-			<template v-for="item in orderStatus">
+			<template v-for="(item,index) in orderStatus">
 				<view class="flexColumnCenter"
-					@click="goOrder">
+					@click="goOrder(index)">
 					<view :class='"iconfont " + item.icon'
 						style="font-size: 70rpx;color: #3fd72c;" />
 					<view>{{item.name}}</view>
@@ -29,14 +29,14 @@
 				</view>
 			</view>
 			<view>
-				<button class="btn">编辑</button>
-				<button class="btn">下架</button>
+				<button class="btn" @click="goGrounding(item.id)">编辑</button>
+				<button class="btn" @click='removeGoods(item.id)'>下架</button>
 			</view>
 		</view>
 	</view>
 </template>
 <script>
-	import {merchantGoods} from '@/config/api.js';
+	import {merchantGoods,delCartGoodsF} from '@/config/api.js';
 	export default {
 		data() {
 			return {
@@ -50,7 +50,8 @@
 					icon: 'icon-moban',
 					name: '全部订单'
 				}],
-				goodsList:[]
+				goodsList:[],
+				orderList:[]
 			}
 		},
 		async onShow() {
@@ -62,9 +63,9 @@
 					url: 'pages/merchant/averagePrice',
 				})
 			},
-			goGrounding(){
-				uni.$u.route({
-					url: 'pages/merchant/grounding',
+			goGrounding(goodsID){
+				uni.navigateTo({
+					url: `/pages/merchant/grounding?goodsID=${goodsID}`,
 				})
 			},
 			async getData(){
@@ -72,8 +73,30 @@
 					farmers_id: 2,
 				}
 				const res = await merchantGoods(params)
+				for(let item of res.data){
+					this.orderList = [...this.orderList,item.id]
+				}
+				uni.$u.vuex('peasantOrderList', this.orderList)
 				this.goodsList = res.data
-			}
+			},
+			goOrder(index){
+				uni.navigateTo({
+					url: `/pages/order/order?peasantId=${2}&&index=${index}`,
+				})
+			},
+			// 农户下架商品
+			async removeGoods(goods_id) {
+				const params = {
+					goods_id: goods_id
+				}
+			
+				// delCartGoods
+				await delCartGoodsF(goods_id)
+				// 删除商品后进行提示   再次调用获取商品列表
+				this.$u.toast("下架成功")
+				this.orderList = []
+				this.getData()
+			},
 		}
 	}
 </script>

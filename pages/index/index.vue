@@ -11,21 +11,25 @@
 				<u-grid-item :customStyle="{ 'margin-bottom': '20rpx' }"
 					v-for="(optionItem,optionIndex) in optionList">
 					<view :class='"iconfont " + optionItem.icon'
+						@click='gocategtory(optionItem.title)'
 						style="font-size: 70rpx;color: #3fd72c;" />
 					<text>{{optionItem.title}}</text>
 				</u-grid-item>
 			</u-grid>
 		</view>
-		<cardList :item="goods"/>
+		<cardList :item="goods" />
 	</view>
 </template>
 <script>
-	import {getindex} from '@/config/api.js';
+	import {
+		getindex
+	} from '@/config/api.js';
 	export default {
 		data() {
 			return {
 				page: 1,
-				swiperList: ['https://image.cnhnb.com/image/jpg/head/2022/06/19/3c12459dd0304346ac0257fd9aed34c7.jpg?imageView2/1/w/525/h/525/format/jpg/interlace/1/quality/100/ignore-error/1',
+				swiperList: [
+					'https://image.cnhnb.com/image/jpg/head/2022/06/19/3c12459dd0304346ac0257fd9aed34c7.jpg?imageView2/1/w/525/h/525/format/jpg/interlace/1/quality/100/ignore-error/1',
 					'https://cdn.uviewui.com/uview/swiper/swiper2.png',
 					'https://cdn.uviewui.com/uview/swiper/swiper3.png'
 				],
@@ -33,35 +37,35 @@
 				optionList: [{
 					name: 'photo',
 					title: '全部',
-					icon:'icon-quanbu'
+					icon: 'icon-quanbu'
 				}, {
 					name: 'lock',
 					title: '蔬菜',
-					icon:'icon-shucai'
+					icon: 'icon-shucai'
 				}, {
 					name: 'star',
 					title: '水果',
-					icon:'icon-alishangchuan-'
+					icon: 'icon-alishangchuan-'
 				}, {
 					name: 'photo',
 					title: '水产',
-					icon:'icon-shuichanhaixian'
+					icon: 'icon-shuichanhaixian'
 				}, {
 					name: 'lock',
 					title: '农副加工',
-					icon:'icon-29gongyegongcheng_jiagonggongyi:before '
+					icon: 'icon-29gongyegongcheng_jiagonggongyi:before '
 				}, {
 					name: 'star',
 					title: '中药材',
-					icon:'icon-caoyao'
+					icon: 'icon-caoyao'
 				}, {
 					name: 'star',
 					title: '柴米油盐',
-					icon:'icon-liangyoumimian'
+					icon: 'icon-liangyoumimian'
 				}, {
 					name: 'star',
 					title: '其它',
-					icon:'icon-qita'
+					icon: 'icon-qita'
 				}]
 			};
 		},
@@ -75,6 +79,16 @@
 				}
 				const res = await getindex(params)
 				this.goods = [...this.goods, ...res.goods.data]
+			},
+			gocategtory(title){
+				uni.$u.vuex('category', title)
+				// this.$u.route({
+				// 	type: 'switchTab',
+				// 	url: 'pages/category/category',
+				// })
+				uni.redirectTo({
+					url:`/pages/category/category?title=${title}`
+				})
 			}
 		},
 		onReachBottom() {

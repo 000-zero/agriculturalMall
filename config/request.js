@@ -23,9 +23,9 @@ module.exports = (vm) => {
 	uni.$u.http.interceptors.request.use((config) => { // 可使用async await 做异步操作
 		// 初始化请求拦截器时，会执行此方法，此时data为undefined，赋予默认{}
 
-		config.header.Authorization = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IuaAquWFvSIsImVtYWlsIjoiemt5QHFxLmNvbSIsInBhc3N3b3JkIjoiMTIzMTIzIiwiaWF0IjoxNjc4NjA1NDUxLCJleHAiOjE2Nzg2OTE4NTF9.rp_559PdHzcEyK5CB-wvMRatBwLRmpE3y_lJU9MfvJA"
+		// config.header.Authorization = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IuaAquWFvSIsImVtYWlsIjoiemt5QHFxLmNvbSIsInBhc3N3b3JkIjoiMTIzMTIzIiwiaWF0IjoxNjc5NzQwMTU5LCJleHAiOjE2Nzk4MjY1NTl9.9NIW-gUnu_m8776V-PGKD5EkVbefgTUDpsPL_fIRGbk"
 		// 根据custom参数中配置的是否需要token，添加对应的请求头
-		// config.header.Authorization = "Bearer " + vm.$store.state.vuex_Authorization
+		config.header.Authorization = "Bearer " + vm.$store.state.vuex_Authorization
 		// console.log(config.header.Authorization)
 
 		return config
@@ -81,7 +81,7 @@ module.exports = (vm) => {
 			setTimeout(() => {
 				vm.$u.route({
 					type:'redirect',
-					url: 'pages/auth/login',		
+					url: 'pages/login/login',		
 				})
 			}, 2000)
 			return false;

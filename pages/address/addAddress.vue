@@ -159,8 +159,7 @@
 					this.$u.toast('添加地址成功')
 					setTimeout(() => {
 						this.$u.route({
-							type: 'reLaunch',
-							url: "/pages/user/user"
+							type: 'navigateBack'
 						})
 					}, 1500)
 				}
@@ -185,8 +184,7 @@
 					this.$u.toast('修改成功')
 					setTimeout(() => {
 						this.$u.route({
-							type: 'reLaunch',
-							url: "/pages/auth/auth"
+							type: 'navigateBack'
 						})
 					}, 1500)
 				}
@@ -196,8 +194,7 @@
 					this.$u.toast('删除成功')
 					setTimeout(() => {
 						this.$u.route({
-							type: 'reLaunch',
-							url: "/pages/auth/auth"
+							type: 'navigateBack'
 						})
 					}, 1500)
 				})

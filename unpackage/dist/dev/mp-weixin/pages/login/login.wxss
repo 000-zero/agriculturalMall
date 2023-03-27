@@ -24,56 +24,89 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.flex.data-v-8a7be032 {
+.flex.data-v-b237504c {
   display: flex;
 }
-.flexCenter.data-v-8a7be032 {
+.flexCenter.data-v-b237504c {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.flexColumnCenter.data-v-8a7be032 {
+.flexColumnCenter.data-v-b237504c {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.flexAlignCenter.data-v-8a7be032 {
+.flexAlignCenter.data-v-b237504c {
   display: flex;
   align-items: center;
 }
-.flexSpace.data-v-8a7be032 {
+.flexSpace.data-v-b237504c {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.flexColumn.data-v-8a7be032 {
+.flexColumn.data-v-b237504c {
   display: flex;
   flex-direction: column;
 }
-.mt10.data-v-8a7be032 {
+.mt10.data-v-b237504c {
   margin-top: 10rpx;
 }
-.ellipsis.data-v-8a7be032 {
+.ellipsis.data-v-b237504c {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
 }
-view.data-v-8a7be032, scroll-view.data-v-8a7be032, swiper-item.data-v-8a7be032 {
+.u-border-bottom.data-v-b237504c {
+  margin-bottom: 40rpx !important;
+}
+.wrap.data-v-b237504c {
+  font-size: 28rpx;
+}
+.wrap .content.data-v-b237504c {
+  width: 600rpx;
+  margin: 80rpx auto 0;
+}
+.wrap .content .title.data-v-b237504c {
+  text-align: left;
+  font-size: 60rpx;
+  font-weight: 500;
+  margin-bottom: 100rpx;
+}
+.wrap .content input.data-v-b237504c {
+  text-align: left;
+  margin-bottom: 10rpx;
+  padding-bottom: 6rpx;
+}
+.wrap .content .getCaptcha.data-v-b237504c {
+  background-color: #fdf3d0;
+  color: #909193;
+  border: none;
+  font-size: 30rpx;
+  padding: 12rpx 0;
+}
+.wrap .content .getCaptcha.data-v-b237504c::after {
+  border: none;
+}
+.wrap .content .alternative.data-v-b237504c {
+  color: #909193;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.wrap .buttom .loginType.data-v-b237504c {
+  display: flex;
+  padding: 350rpx 150rpx 150rpx 150rpx;
+  justify-content: space-between;
+}
+.wrap .buttom .loginType .item.data-v-b237504c {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  flex-grow: 0;
-  flex-basis: auto;
-  align-items: stretch;
-  align-content: flex-start;
-}
-.u-link.data-v-8a7be032 {
-  line-height: 1;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex: 1;
+  align-items: center;
+  color: #606266;
+  font-size: 28rpx;
 }
 

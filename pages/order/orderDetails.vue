@@ -116,11 +116,11 @@
 					this.created_at = res.order.createdAt
 					console.log(typeof this.created_at)
 
-					if (res.order.status == 1) this.text = "未支付"
+					if (res.order.status == 1) this.text = "待支付"
 					else if (res.order.status == 2) this.text = "已付款"
-					else if (res.order.status == 3) this.text = "已发货"
-					else if (res.order.status == 4) this.text = "已收货"
-					else if (res.order.status == 5) this.text = "已过期"
+					else if (res.order.status == 3) this.text = "退款中"
+					else if (res.order.status == 4) this.text = "已退款"
+					else if (res.order.status == 5) this.text = "已收货"
 
 					if (res.order.status == 1) {
 						this.btn = "支付订单"
